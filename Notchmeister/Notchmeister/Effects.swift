@@ -17,6 +17,7 @@ enum Effects: Int, CaseIterable {
 	case expando
 	case dice
 	case autotoot
+	case advanceLife
 #if DEBUG && false
 	case portal
 #endif
@@ -39,6 +40,8 @@ enum Effects: Int, CaseIterable {
 			return "Fusion Dice"
 		case .autotoot:
 			return "AutoToot™"
+		case .advanceLife:
+			return "Advance Life"
 #if DEBUG && false
 		case .portal:
 			return "Portal"
@@ -64,6 +67,8 @@ enum Effects: Int, CaseIterable {
 			return "Apple’s expertise with silicon is not only with the die, but also the dice.\n\n☢️ AVOID EYE OR SKIN EXPOSURE"
 		case .autotoot:
 			return "Pressure buildup can reduce the performance of your Mac: AutoToot™ can safely vent harmful gases."
+		case .advanceLife:
+			return "Shows your current Advance Life mode, active task, confidence, and Pomodoro timer — right in the notch.\n\nRequires the Advance Life desktop companion to be running."
 #if DEBUG && false
 		case .portal:
 			return "Activate Macintosh Interdimensional Computation Extension (MICE)."
@@ -89,6 +94,8 @@ enum Effects: Int, CaseIterable {
 			return DiceEffect(with: parentLayer, in: parentView, of: parentWindow)
 		case .autotoot:
 			return TootEffect(with: parentLayer, in: parentView, of: parentWindow)
+		case .advanceLife:
+			return AdvanceLifeEffect(with: parentLayer, in: parentView, of: parentWindow)
 #if DEBUG && false
 		case .portal:
 			return PortalEffect(with: parentLayer, in: parentView, of: parentWindow)
